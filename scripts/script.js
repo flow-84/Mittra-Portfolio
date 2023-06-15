@@ -36,7 +36,7 @@ $(function () {
         const subject = `A message from ${name}`;
         const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A %0D%0A${message}`;
 
-        window.location.replace(`mailto:cybercoder.nishant@gmail.com?subject=${subject}&body=${body}`)
+        window.location.replace(`mailto:imflow84@gmail.com?subject=${subject}&body=${body}`)
         e.currentTarget.submit();
     });
 
