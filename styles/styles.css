@@ -61,11 +61,11 @@ nav .navbar-brand .long-brand {
 }
 @media screen and (min-width: 768px) {
   nav .navbar-nav li#li-contact {
-    background-color: hsl(255, 80%, 52%);
+    background-color: hsl(270, 100%, 50%);
     transition: background-color 150ms ease-in-out;
   }
   nav .navbar-nav li#li-contact:hover {
-    background-color: hsl(255, 80%, 40%);
+    background-color: hsl(270, 100%, 50%);
   }
   nav .navbar-nav li#li-contact a.nav-link {
     color: white !important;
