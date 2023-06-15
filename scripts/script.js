@@ -37,8 +37,7 @@ $(function () {
         const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A %0D%0A${message}`;
 
         window.location.replace(`mailto:imflow84@gmail.com?subject=${subject}&body=${body}`)
-        e.currentTarget.submit();
-    });
+        });
 
     $('.project-card button').click(function () {
         window.location.href = $(this).data('url');
