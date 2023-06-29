@@ -147,7 +147,7 @@ nav .navbar-brand .long-brand {
 }
 #header h1,
 #header p {
-  background: hsl(240, 19%, 12%);
+  background: hsla(240, 18%, 12%, 0);
 }
 @media screen and (min-width: 768px) {
   #header::after {
@@ -157,7 +157,7 @@ nav .navbar-brand .long-brand {
     right: 0;
     top: 0;
     height: 57vw;
-    background-color: hsl(240, 18%, 12%);
+    background-color: hsla(240, 18%, 12%, 0);
     z-index: -10;
     min-height: 480px;
   }
