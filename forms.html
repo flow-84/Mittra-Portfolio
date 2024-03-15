@@ -6,8 +6,8 @@
     <title>Kampagnen-Fragebogen für Cannafree Shop</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff;
             color: #333;
             margin: 0;
             padding: 0;
@@ -15,47 +15,45 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
         }
         .container {
-            width: 100%;
+            width: 90%;
             max-width: 600px;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             background-color: #f9f9f9;
-            border-radius: 10px;
+            border-radius: 8px;
+            text-align: center;
         }
         form {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
         }
-        input[type=text], input[type=email], input[type=number], textarea {
+        textarea, input[type="submit"] {
+            width: 100%;
             padding: 10px;
+            margin-bottom: 10px;
             border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 4px;
         }
-        input[type=submit] {
+        input[type="submit"] {
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
             background-color: #4CAF50;
             color: white;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 5px;
             cursor: pointer;
-            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
-        input[type=submit]:hover {
+        input[type="submit"]:hover {
             background-color: #45a049;
         }
-        img.logo {
-            display: block;
-            margin: 0 auto 20px auto;
-            width: 150px;
-            height: 150px;
-        }
-        @media (max-width: 768px) {
+        @media only screen and (max-width: 768px) {
             .container {
+                width: 100%;
                 margin: 10px;
                 box-shadow: none;
             }
@@ -64,30 +62,21 @@
 </head>
 <body>
     <div class="container">
-        <img src="assets/logo.png" alt="Cannafree Shop Logo" class="logo">
         <h2>Kampagnen-Fragebogen für Cannafree Shop</h2>
-        <form method="POST" netlify></form>
-            <label for="companyName">Name des Unternehmens:</label>
-            <input type="text" id="companyName" name="companyName" required>
-            
-            <label for="contactEmail">Kontakt-E-Mail:</label>
-            <input type="email" id="contactEmail" name="contactEmail" required>
-            
-            <label for="campaignGoals">Ziele der Kampagne:</label>
-            <textarea id="campaignGoals" name="campaignGoals" required></textarea>
-            
-            <label for="targetAudience">Zielgruppe:</label>
-            <input type="text" id="targetAudience" name="targetAudience" required>
-            
-            <label for="budget">Geplantes Werbebudget:</label>
-            <input type="number" id="budget" name="budget" required>
-            
-            <label for="previousExperience">Erfahrungen mit Google Ads (falls vorhanden):</label>
-            <textarea id="previousExperience" name="previousExperience"></textarea>
-            
-            <label for="specificProducts">Zu bewerbende spezifische Produkte:</label>
-            <input type="text" id="specificProducts" name="specificProducts" required>
-            
+        <form method="POST" data-netlify="true">
+            <textarea name="maxCPC" placeholder="Welches maximale CPC (Cost-per-Click)-Gebot ist geplant?" required></textarea>
+            <textarea name="adScheduling" placeholder="Soll die Kampagne auf bestimmte Tage oder Stunden ausgerichtet werden (Ad Scheduling)?" required></textarea>
+            <textarea name="geoTargeting" placeholder="Welche geografischen Zielregionen sollen in der Kampagne priorisiert werden?" required></textarea>
+            <textarea name="deviceTypes" placeholder="Sind bestimmte Gerätetypen (Mobilgeräte, Tablets, Desktops) zu bevorzugen?" required></textarea>
+            <textarea name="budget" placeholder="Welches ist das angestrebte tägliche oder monatliche Budget für die Kampagne?" required></textarea>
+            <textarea name="revenueGoals" placeholder="Welche Umsatzziele sollen mit der Kampagne erreicht werden?" required></textarea>
+            <textarea name="conversionActions" placeholder="Welche Conversion-Aktionen sollen in Google Ads verfolgt werden?" required></textarea>
+            <textarea name="previousCPCCTR" placeholder="Welche bisherigen CPC- und CTR-Werte wurden erzielt (falls vorhanden)?" required></textarea>
+            <textarea name="placementAdjustments" placeholder="Welche Anpassungen oder Ausschlüsse von Platzierungen sind gewünscht?" required></textarea>
+            <textarea name="specialOffers" placeholder="Gibt es spezielle Angebote oder USPs, die in den Anzeigen hervorgehoben werden sollten?" required></textarea>
+            <textarea name="landingPages" placeholder="Welche Landing-Page-URLs sollen für die Kampagnenziele genutzt werden?" required></textarea>
+            <textarea name="reportFrequency" placeholder="In welcher Frequenz werden Berichte zur Kampagnenleistung gewünscht?" required></textarea>
+            <textarea name="compliance" placeholder="Gibt es spezielle Compliance-Richtlinien oder rechtliche Überlegungen für Werbetexte?" required></textarea>
             <input type="submit" value="Fragebogen absenden">
         </form>
     </div>
