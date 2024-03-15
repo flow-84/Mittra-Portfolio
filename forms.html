@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kampagnen-Fragebogen für Cannafree Shop</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: white;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input[type=text], input[type=email], input[type=number], textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        img.logo {
+            display: block;
+            margin: 0 auto 20px auto;
+            width: 150px;
+            height: 150px;
+        }
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="assets/logo.png" alt="Cannafree Shop Logo" class="logo">
+        <h2>Kampagnen-Fragebogen für Cannafree Shop</h2>
+        <form action="SEND_TO_URL" method="POST">
+            <label for="companyName">Name des Unternehmens:</label>
+            <input type="text" id="companyName" name="companyName" required>
+            
+            <label for="contactEmail">Kontakt-E-Mail:</label>
+            <input type="email" id="contactEmail" name="contactEmail" required>
+            
+            <label for="campaignGoals">Ziele der Kampagne:</label>
+            <textarea id="campaignGoals" name="campaignGoals" required></textarea>
+            
+            <label for="targetAudience">Zielgruppe:</label>
+            <input type="text" id="targetAudience" name="targetAudience" required>
+            
+            <label for="budget">Geplantes Werbebudget:</label>
+            <input type="number" id="budget" name="budget" required>
+            
+            <label for="previousExperience">Erfahrungen mit Google Ads (falls vorhanden):</label>
+            <textarea id="previousExperience" name="previousExperience"></textarea>
+            
+            <label for="specificProducts">Zu bewerbende spezifische Produkte:</label>
+            <input type="text" id="specificProducts" name="specificProducts" required>
+            
+            <input type="submit" value="Fragebogen absenden">
+        </form>
+    </div>
+</body>
+</html>
