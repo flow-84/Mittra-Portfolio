@@ -10,7 +10,7 @@
             background-color: #fff;
             color: #333;
             margin: 0;
-            padding: 10px; /* Erhöhter Randabstand */
+            padding: 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -26,7 +26,7 @@
             background-color: #f9f9f9;
             border-radius: 8px;
             text-align: center;
-            box-sizing: border-box; /* Box-Sizing hinzugefügt */
+            box-sizing: border-box;
         }
         form {
             display: flex;
@@ -36,15 +36,17 @@
         label {
             text-align: left;
             font-weight: bold;
-            margin-top: 10px; /* Abstand über Labels hinzugefügt */
+            margin-top: 10px;
         }
         textarea, input[type="submit"] {
             width: 100%;
             padding: 10px;
-            margin-top: 5px; /* Margin-Top für besseren Abstand */
+            margin-top: 5px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box; /* Box-Sizing für alle Felder hinzugefügt */
+            box-sizing: border-box;
+            resize: vertical; /* Ermöglicht dem Benutzer, die Höhe manuell anzupassen */
+            overflow: hidden; /* Verhindert Scrollleisten innerhalb der Textarea */
         }
         input[type="submit"] {
             font-weight: bold;
@@ -60,7 +62,7 @@
         }
         @media only screen and (max-width: 768px) {
             .container {
-                width: calc(100% - 20px); /* Anpassung der Container-Breite */
+                width: calc(100% - 20px);
                 margin: 10px;
                 box-shadow: none;
             }
@@ -113,5 +115,16 @@
             <input type="submit" value="Fragebogen absenden">
         </form>
     </div>
+    <script>
+        document.addEventListener('input', function (event) {
+            if (event.target.tagName.toLowerCase() !== 'textarea') return;
+            autoResizeTextarea(event.target);
+        });
+
+        function autoResizeTextarea(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = textarea.scrollHeight + 'px';
+        }
+    </script>
 </body>
 </html>
